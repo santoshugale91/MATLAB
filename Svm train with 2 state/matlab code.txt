@@ -1,0 +1,24 @@
+%-- 14-11-2014 11:21 --%
+ 
+test=xlsread('Test');
+ 
+ 
+ 
+group={'sit';'sit';'sit';'sit';'sit';'sit';'sit';'sit';'sit';'sit';'stand';'stand';'stand';'stand';'stand';'stand';'stand';'stand';'stand';'stand';'walk';'walk';'walk';'walk';'walk';'walk';'walk';'walk';'walk';'walk';}
+clc
+
+svmm=svmtrain(test,group);
+
+
+ss=[  6.3198   -0.6946   -7.0417
+6.2790   -0.7219   -7.0826
+6.2790   -0.7219   -7.1234
+6.2381   -0.7219   -7.1234
+6.2790   -0.6946   -7.0826
+6.2790   -0.6946   -7.1234
+6.2790   -0.7219   -7.0826
+6.2790   -0.7219   -7.1234];
+
+
+res=svmclassify(svmm,ss);
+ 
